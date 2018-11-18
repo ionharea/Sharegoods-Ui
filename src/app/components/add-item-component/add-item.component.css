@@ -1,0 +1,25 @@
+.btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.container {
+  margin-top: 25px;
+}
+
+.form-group {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.title {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+
+@media only screen and (min-width: 600px) {
+  .col-s-1 {width: 20%;}
+  .col-s-11 {width: 80%;}
+}
+

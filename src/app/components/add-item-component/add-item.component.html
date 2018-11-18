@@ -1,0 +1,32 @@
+<div class="container">
+  <form #newItemForm="ngForm">
+    <div class="form-group row">
+      <input name="title"
+             class="form-control col-md-11 col-sm-10 title"
+             id="title"
+             maxlength="50"
+             placeholder="Title of your post(max 50 characters)"
+             required
+             [(ngModel)]="item.title">
+
+      <button type="submit" [disabled]="newItemForm.form.invalid" class="btn btn-info col-md-1 col-sm-2 btn-create"
+              (click)="createItem()">Add post
+      </button>
+    </div>
+
+    <div class="form-group row">
+      <textarea *ngIf="item.title || (this.imageUploadComponent.files.length > 0)"
+                class="form-control col-md-12"
+                name="description"
+                rows="4"
+                id="description"
+                maxlength="250"
+                placeholder="Enter description(max 250 characters)"
+                [(ngModel)]="item.description"></textarea>
+    </div>
+  </form>
+  <image-upload [max]="4" dropBoxMessage="Drop your images here(max 4)"
+                [extensions]="['jpeg','png', 'jpg']"></image-upload>
+</div>
+
+
